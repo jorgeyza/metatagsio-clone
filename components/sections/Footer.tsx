@@ -6,7 +6,7 @@ interface Props {}
 
 const Footer = (props: Props) => {
   return (
-    <Box padding={6}>
+    <Box as="footer" padding={6}>
       <Center
         backgroundColor="primary"
         paddingTop="100px"

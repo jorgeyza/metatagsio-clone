@@ -1,8 +1,8 @@
-import { Box, Flex, Text, Heading, Link } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading } from '@chakra-ui/react';
 
-interface Props {}
+import { PreviewProps } from '../sections/Preview';
 
-const FacebookPreview = (props: Props) => {
+const FacebookPreview = ({ domain, title, description }: PreviewProps) => {
   return (
     <>
       <Flex position="relative">
@@ -39,47 +39,59 @@ const FacebookPreview = (props: Props) => {
         border="1px solid"
         borderColor="facebook.border"
       >
-        <Box borderBottom="1px solid" borderColor="facebook.border">
-          <Box height="261px" backgroundColor="red"></Box>
-          <Flex
-            flexDirection="column"
-            backgroundColor="facebook.bottomBackground"
-            padding="10px 12px"
+        <Box
+          position="relative"
+          height="261px"
+          borderBottom="1px solid"
+          borderColor="facebook.border"
+          _before={{
+            content: '""',
+            display: 'block',
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+            backgroundImage: 'url(./assets/metatags-image.png)',
+            backgroundSize: 'cover',
+          }}
+        ></Box>
+        <Flex
+          flexDirection="column"
+          backgroundColor="facebook.bottomBackground"
+          padding="10px 12px"
+        >
+          <Text
+            color="facebook.domain"
+            textTransform="uppercase"
+            fontSize="12px"
+            textOverflow="ellipsis"
+            whiteSpace="nowrap"
+            wordBreak="break-word"
           >
-            <Text
-              color="facebook.domain"
-              textTransform="uppercase"
-              fontSize="12px"
-              textOverflow="ellipsis"
-              whiteSpace="nowrap"
-              wordBreak="break-word"
-            >
-              metatags.io
-            </Text>
-            <Text
-              color="facebook.title"
-              whiteSpace="normal"
-              wordBreak="break-word"
-              fontWeight="700"
-              fontSize="16px"
-            >
-              Meta Tags — Preview, Edit and Generate
-            </Text>
-            <Text
-              color="facebook.description"
-              fontSize="14px"
-              textOverflow="ellipsis"
-              whiteSpace="nowrap"
-              wordBreak="break-word"
-              height="18px"
-              overflow="hidden"
-            >
-              With Meta Tags you can edit and experiment with your content then
-              preview how your webpage will look on Google, Facebook, Twitter
-              and more!
-            </Text>
-          </Flex>
-        </Box>
+            {domain}
+          </Text>
+          <Text
+            noOfLines={2}
+            color="facebook.title"
+            whiteSpace="normal"
+            wordBreak="break-word"
+            fontWeight="700"
+            fontSize="16px"
+          >
+            {title}
+          </Text>
+          <Text
+            noOfLines={1}
+            color="facebook.description"
+            fontSize="14px"
+            textOverflow="ellipsis"
+            height="18px"
+            overflow="hidden"
+          >
+            {description}
+          </Text>
+        </Flex>
       </Flex>
     </>
   );

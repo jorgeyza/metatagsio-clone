@@ -1,8 +1,8 @@
 import { Flex, Text, Heading, Link } from '@chakra-ui/react';
 
-interface Props {}
+import { PreviewProps } from '../sections/Preview';
 
-const GooglePreview = (props: Props) => {
+const GooglePreview = ({ domain, title, description }: PreviewProps) => {
   return (
     <>
       <Flex position="relative">
@@ -44,7 +44,7 @@ const GooglePreview = (props: Props) => {
           textOverflow="ellipsis"
           whiteSpace="nowrap"
         >
-          Meta Tags — Preview, Edit and Generate
+          {title}
         </Link>
         <Text
           fontSize="14px"
@@ -53,7 +53,7 @@ const GooglePreview = (props: Props) => {
           margin="0"
           whiteSpace="nowrap"
         >
-          https://metatags.io/
+          {domain}
         </Text>
         <Text
           color="google.description"
@@ -61,9 +61,7 @@ const GooglePreview = (props: Props) => {
           lineHeight={1.4}
           wordBreak="break-word"
         >
-          With Meta Tags you can edit and experiment with your content then
-          preview how your webpage will look on Google, Facebook, Twitter and
-          more!
+          {description}
         </Text>
       </Flex>
     </>

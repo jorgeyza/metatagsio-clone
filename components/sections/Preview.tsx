@@ -1,23 +1,36 @@
 import { Flex, Text, Link, Heading, HStack, Icon } from '@chakra-ui/react';
-import { ChangeEvent, useState } from 'react';
+
 import GenerateMetaTagsIcon from '../../Icons/GenerateMetaTagsIcon';
 import FacebookPreview from '../elements/FacebookPreview';
 import GooglePreview from '../elements/GooglePreview';
 import TwitterPreview from '../elements/TwitterPreview';
 
-interface Props {}
+import { useAppSelector } from '../../app/hooks';
 
-const Preview = (props: Props) => {
+export interface PreviewProps {
+  title: string;
+  domain: string;
+  description: string;
+}
+
+const Preview = () => {
+  const googleChannel = useAppSelector((state) => state.ui.googleChannel);
+  const facebookChannel = useAppSelector((state) => state.ui.facebookChannel);
+  const twitterChannel = useAppSelector((state) => state.ui.twitterChannel);
+
+  const title = useAppSelector((state) => state.ui.titleInput);
+  const domain = useAppSelector((state) => state.ui.domainInput);
+  const description = useAppSelector((state) => state.ui.descriptionInput);
+
   return (
     <Flex
       as="section"
       flexDir="column"
       gridGap={4}
-      paddingX={4}
-      paddingY={8}
+      padding="12px 40px"
       flexGrow={1}
     >
-      <Flex width="100%" justifyContent="space-between">
+      <Flex width="100%" justifyContent="space-between" marginTop={4}>
         <Heading as="h1" size="xs" alignSelf="start">
           PREVIEW
         </Heading>
@@ -38,9 +51,27 @@ const Preview = (props: Props) => {
           </HStack>
         </Link>
       </Flex>
-      <GooglePreview />
-      <FacebookPreview />
-      <TwitterPreview />
+      {googleChannel && (
+        <GooglePreview
+          domain={domain}
+          title={title}
+          description={description}
+        />
+      )}
+      {facebookChannel && (
+        <FacebookPreview
+          domain={domain}
+          title={title}
+          description={description}
+        />
+      )}
+      {twitterChannel && (
+        <TwitterPreview
+          domain={domain}
+          title={title}
+          description={description}
+        />
+      )}
     </Flex>
   );
 };

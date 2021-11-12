@@ -15,6 +15,8 @@ import LinkedinIcon from '../../Icons/LinkedinIcon';
 import PinterestIcon from '../../Icons/PinterestIcon';
 import SlackIcon from '../../Icons/SlackIcon';
 import { ChannelsIconContainer } from '../../Icons/ChannelsIconContainer';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { toggleChannel } from '../../app/uiSlice';
 
 interface ChannelsItemsProps {
   channelName: string;
@@ -68,42 +70,56 @@ const Channels = () => {
   const [isPinterestActive, setIsPinterestActive] = useState(false);
   const [isSlasckActive, setIsSlasckActive] = useState(false);
 
+  const dispatch = useAppDispatch();
+  const googleChannel = useAppSelector((state) => state.ui.googleChannel);
+  const facebookChannel = useAppSelector((state) => state.ui.facebookChannel);
+  const twitterChannel = useAppSelector((state) => state.ui.twitterChannel);
+  const linkedinChannel = useAppSelector((state) => state.ui.linkedinChannel);
+  const pinterestChannel = useAppSelector((state) => state.ui.pinterestChannel);
+  const slackChannel = useAppSelector((state) => state.ui.slackChannel);
+
   const listItems = [
     {
       channelName: 'Google',
       icon: <GoogleIcon />,
-      isActive: isGoogleActive,
-      handleActiveChannel: () => setIsGoogleActive(!isGoogleActive),
+      isActive: googleChannel,
+      handleActiveChannel: () =>
+        dispatch(toggleChannel({ channelName: 'googleChannel' })),
     },
     {
       channelName: 'Facebook',
       icon: <FacebookIcon />,
-      isActive: isFacebookActive,
-      handleActiveChannel: () => setIsFacebookActive(!isFacebookActive),
+      isActive: facebookChannel,
+      handleActiveChannel: () =>
+        dispatch(toggleChannel({ channelName: 'facebookChannel' })),
     },
     {
       channelName: 'Twitter',
       icon: <TwitterIcon />,
-      isActive: isTwitterActive,
-      handleActiveChannel: () => setIsTwitterActive(!isTwitterActive),
+      isActive: twitterChannel,
+      handleActiveChannel: () =>
+        dispatch(toggleChannel({ channelName: 'twitterChannel' })),
     },
     {
       channelName: 'Linkedin',
       icon: <LinkedinIcon />,
-      isActive: isLinkedinActive,
-      handleActiveChannel: () => setIsLinkedinActive(!isLinkedinActive),
+      isActive: linkedinChannel,
+      handleActiveChannel: () =>
+        dispatch(toggleChannel({ channelName: 'linkedinChannel' })),
     },
     {
       channelName: 'Pinterest',
       icon: <PinterestIcon />,
-      isActive: isPinterestActive,
-      handleActiveChannel: () => setIsPinterestActive(!isPinterestActive),
+      isActive: pinterestChannel,
+      handleActiveChannel: () =>
+        dispatch(toggleChannel({ channelName: 'pinterestChannel' })),
     },
     {
       channelName: 'Slack',
       icon: <SlackIcon />,
-      isActive: isSlasckActive,
-      handleActiveChannel: () => setIsSlasckActive(!isSlasckActive),
+      isActive: slackChannel,
+      handleActiveChannel: () =>
+        dispatch(toggleChannel({ channelName: 'slackChannel' })),
     },
   ];
 

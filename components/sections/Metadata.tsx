@@ -1,34 +1,30 @@
-import {
-  Flex,
-  VStack,
-  Text,
-  Textarea,
-  Box,
-  Heading,
-  Button,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Icon,
-  InputGroup,
-} from '@chakra-ui/react';
+import { Flex, VStack, Text, Textarea, Heading } from '@chakra-ui/react';
 import { ChangeEvent, useState } from 'react';
+import { setInputValue } from '../../app/uiSlice';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 import FileUpload from '../elements/FileUpload';
 
 const Metadata = () => {
-  const [titleValue, setTitleValue] = useState('');
-  const [titleLetterCount, setTitleLetterCount] = useState(0);
-  const [descriptionValue, setDescriptionValue] = useState('');
-  const [descriptionLetterCount, setDescriptionLetterCount] = useState(0);
+  const [titleLetterCount, setTitleLetterCount] = useState(38);
+  const [descriptionLetterCount, setDescriptionLetterCount] = useState(139);
+  const dispatch = useAppDispatch();
+
+  const titleInput = useAppSelector((state) => state.ui.titleInput);
+  const descriptionInput = useAppSelector((state) => state.ui.descriptionInput);
 
   const handleTitleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setTitleValue(e.target.value);
+    dispatch(setInputValue({ inputName: 'titleInput', value: e.target.value }));
     setTitleLetterCount(e.target.value.length);
   };
 
   const handleDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setDescriptionValue(e.target.value);
+    dispatch(
+      setInputValue({
+        inputName: 'descriptionInput',
+        value: e.target.value,
+      })
+    );
     setDescriptionLetterCount(e.target.value.length);
   };
 
@@ -67,7 +63,7 @@ const Metadata = () => {
           </Text>
         </Flex>
         <Textarea
-          value={titleValue}
+          value={titleInput}
           resize="none"
           rows={2}
           onChange={handleTitleChange}
@@ -83,7 +79,7 @@ const Metadata = () => {
           </Text>
         </Flex>
         <Textarea
-          value={descriptionValue}
+          value={descriptionInput}
           resize="none"
           rows={5}
           onChange={handleDescriptionChange}

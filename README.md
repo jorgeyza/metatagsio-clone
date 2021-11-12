@@ -1,10 +1,11 @@
 # Meta Tags Clone
 
-This is a partial clone of [metatags.io](https://metatags.io/) frontend. Built with Next.js, TypeScript and ChakraUI.
+This is a partial clone of [metatags.io](https://metatags.io/) frontend.
+Built with Next.js, TypeScript, Redux Toolkit and ChakraUI.
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
