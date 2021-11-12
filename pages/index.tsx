@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
-import MainSection from '../components/sections/MainSection';
-import NavBar from '../components/sections/NavBar';
 
 import SEO from '../components/elements/SEO';
+import MainSection from '../components/sections/MainSection';
+import NavBar from '../components/sections/NavBar';
+import Footer from '../components/sections/Footer';
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
       <SEO />
       <NavBar />
       <MainSection />
+      <Footer />
     </>
   );
 };

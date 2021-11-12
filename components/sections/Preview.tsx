@@ -40,7 +40,7 @@ const Preview = (props: Props) => {
       </Flex>
       <GooglePreview />
       <FacebookPreview />
-      {/* <TwitterPreview /> */}
+      <TwitterPreview />
     </Flex>
   );
 };

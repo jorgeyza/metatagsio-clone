@@ -1,4 +1,4 @@
-import { Flex, Text, Heading, Link } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading, Link } from '@chakra-ui/react';
 
 interface Props {}
 
@@ -33,38 +33,53 @@ const FacebookPreview = (props: Props) => {
       </Flex>
       <Flex
         flexDirection="column"
-        fontFamily="Arial, sans-serif"
-        maxWidth="600px"
+        fontFamily="Helvetica, Arial, sans-serif"
+        width="500px"
+        cursor="pointer"
+        border="1px solid"
+        borderColor="facebook.border"
       >
-        <Link
-          color="google.title"
-          fontSize="18px"
-          fontWeight="400"
-          lineHeight={1.2}
-          textOverflow="ellipsis"
-          whiteSpace="nowrap"
-        >
-          Meta Tags — Preview, Edit and Generate
-        </Link>
-        <Text
-          fontSize="14px"
-          lineHeight={1.4}
-          color="google.link"
-          margin="0"
-          whiteSpace="nowrap"
-        >
-          https://metatags.io/
-        </Text>
-        <Text
-          color="google.description"
-          fontSize="13px"
-          lineHeight={1.4}
-          wordBreak="break-word"
-        >
-          With Meta Tags you can edit and experiment with your content then
-          preview how your webpage will look on Google, Facebook, Twitter and
-          more!
-        </Text>
+        <Box borderBottom="1px solid" borderColor="facebook.border">
+          <Box height="261px" backgroundColor="red"></Box>
+          <Flex
+            flexDirection="column"
+            backgroundColor="facebook.bottomBackground"
+            padding="10px 12px"
+          >
+            <Text
+              color="facebook.domain"
+              textTransform="uppercase"
+              fontSize="12px"
+              textOverflow="ellipsis"
+              whiteSpace="nowrap"
+              wordBreak="break-word"
+            >
+              metatags.io
+            </Text>
+            <Text
+              color="facebook.title"
+              whiteSpace="normal"
+              wordBreak="break-word"
+              fontWeight="700"
+              fontSize="16px"
+            >
+              Meta Tags — Preview, Edit and Generate
+            </Text>
+            <Text
+              color="facebook.description"
+              fontSize="14px"
+              textOverflow="ellipsis"
+              whiteSpace="nowrap"
+              wordBreak="break-word"
+              height="18px"
+              overflow="hidden"
+            >
+              With Meta Tags you can edit and experiment with your content then
+              preview how your webpage will look on Google, Facebook, Twitter
+              and more!
+            </Text>
+          </Flex>
+        </Box>
       </Flex>
     </>
   );
