@@ -3,12 +3,12 @@ export const InputStyles = {
     filled: {
       field: {
         backgroundColor: 'secondary',
+        focusBorderColor: 'none',
         _hover: {
           backgroundColor: 'secondary',
         },
         _focus: {
           backgroundColor: 'secondary',
-          boxShadow: '0 2px 120px rgb(0 0 0 / 10%)',
         },
       },
     },

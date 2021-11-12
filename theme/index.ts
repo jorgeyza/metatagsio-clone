@@ -1,7 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 import { InputStyles as Input } from './components/InputStyles';
+import { LinkStyles as Link } from './components/LinkStyles';
+import { globalStyles as styles } from './styles';
 
 export const theme = extendTheme({
+  styles,
   colors: {
     primary: '#2A81FB',
     secondary: '#EBF1FA',
@@ -9,6 +12,10 @@ export const theme = extendTheme({
     text: '#18283E',
     previewDivider: '#E0E7F1',
     arrowBackground: '#D4E6FE',
+    icon: {
+      default: '#C7D3D9',
+      active: 'white',
+    },
     google: {
       title: '#1a0dab',
       link: '#006621',
@@ -34,5 +41,6 @@ export const theme = extendTheme({
   },
   components: {
     Input,
+    Link,
   },
 });
