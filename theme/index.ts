@@ -1,7 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
+
+import { globalStyles as styles } from './styles';
+
 import { InputStyles as Input } from './components/InputStyles';
 import { LinkStyles as Link } from './components/LinkStyles';
-import { globalStyles as styles } from './styles';
+import { TextareaStyles as Textarea } from './components/TextareaStyles';
 
 export const theme = extendTheme({
   styles,
@@ -42,5 +45,6 @@ export const theme = extendTheme({
   components: {
     Input,
     Link,
+    Textarea,
   },
 });

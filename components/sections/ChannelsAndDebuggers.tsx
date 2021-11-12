@@ -7,10 +7,10 @@ const ChannelsAndDebuggers = () => {
     <Flex
       as="section"
       flexDir="column"
+      flex="0 0 240px"
       gridGap={16}
       paddingX={4}
       paddingY={8}
-      justifyContent="center"
       alignItems="center"
     >
       <Channels />

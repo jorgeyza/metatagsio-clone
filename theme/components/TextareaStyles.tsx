@@ -1,4 +1,4 @@
-export const InputStyles = {
+export const TextareaStyles = {
   variants: {
     filled: {
       field: {

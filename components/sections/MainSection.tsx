@@ -8,7 +8,7 @@ interface Props {}
 
 const MainSection = (props: Props) => {
   return (
-    <Flex as="main" borderY="1px solid #C7D3D9">
+    <Flex as="main" borderY="1px solid" borderColor="icon.default">
       <ChannelsAndDebuggers />
       <Metadata />
       <Preview />
