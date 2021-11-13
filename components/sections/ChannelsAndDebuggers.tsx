@@ -15,7 +15,6 @@ const ChannelsAndDebuggers = () => {
       gridGap={16}
       paddingX={4}
       paddingY={8}
-      alignItems="center"
       initial={{ x: -30, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       // @ts-ignore

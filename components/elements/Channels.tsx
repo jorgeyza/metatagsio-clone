@@ -102,8 +102,8 @@ const Channels = () => {
   ];
 
   return (
-    <VStack as="section" spacing={10}>
-      <Heading as="h1" size="xs" alignSelf="start">
+    <VStack as="section" spacing={10} alignItems="start">
+      <Heading as="h1" fontSize="11px">
         CHANNELS
       </Heading>
       <List spacing={2} fontSize="18px">

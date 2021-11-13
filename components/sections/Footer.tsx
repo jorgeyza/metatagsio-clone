@@ -18,7 +18,13 @@ const Footer = () => {
           gridGap="6"
         >
           <LogoIcon />
-          <Heading fontWeight="400" as="h1" size="lg" color="white">
+          <Heading
+            fontWeight="400"
+            as="h1"
+            fontSize="24px"
+            color="white"
+            marginBottom="-10px"
+          >
             Meta Tags
           </Heading>
           <Text

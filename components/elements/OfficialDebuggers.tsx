@@ -2,8 +2,8 @@ import { Heading, VStack, List, ListItem, Link } from '@chakra-ui/react';
 
 const OfficialDebuggers = () => {
   return (
-    <VStack as="section" spacing={6}>
-      <Heading as="h1" size="xs" alignSelf="start">
+    <VStack as="section" spacing={6} alignItems="start">
+      <Heading as="h1" size="xs" fontSize="11px">
         OFFICIAL DEBUGGERS
       </Heading>
       <List

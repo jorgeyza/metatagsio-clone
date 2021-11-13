@@ -39,14 +39,15 @@ const NavBar = () => {
           alignItems="center"
         >
           <Icon as={LogoIcon} display="block" maxW="100%" />
-          <Text as="div" size={'md'} fontWeight="700" color="text">
+          <Text as="div" fontSize="18px" fontWeight="700" color="text">
             Meta Tags
           </Text>
         </Link>
         <Input
-          width="33%"
-          fontWeight="700"
           size="lg"
+          width="380px"
+          fontWeight="700"
+          fontSize="16px"
           variant="filled"
           value={domainInput}
           _focus={{ boxShadow: '0 2px 120px rgb(0 0 0 / 10%)' }}

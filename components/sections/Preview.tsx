@@ -47,7 +47,7 @@ const Preview = () => {
       transition={{ duration: 1, delay: 0.5 }}
     >
       <Flex width="100%" justifyContent="space-between" marginTop={4}>
-        <Heading as="h1" size="xs" alignSelf="start">
+        <Heading as="h1" size="xs" alignSelf="start" fontSize="11px">
           PREVIEW
         </Heading>
         <Link

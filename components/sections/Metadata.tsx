@@ -59,7 +59,7 @@ const Metadata = () => {
       // @ts-ignore
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <Heading as="h1" size="xs" alignSelf="start">
+      <Heading as="h1" size="xs" alignSelf="start" fontSize="11px">
         METADATA
       </Heading>
       <VStack spacing={2} width="100%">
