@@ -31,8 +31,6 @@ const ChannelsItems = ({
   isActive,
   handleActiveChannel,
 }: ChannelsItemsProps) => {
-  // TODO: Fix rerender of all list items when toggling channels
-  // console.log(channelName, 'was rendered');
   return (
     <ListItem
       display="flex"
@@ -48,13 +46,7 @@ const ChannelsItems = ({
       }}
       onClick={handleActiveChannel}
     >
-      <ListIcon
-        as={() => (
-          <ChannelsIconContainer isActive={isActive}>
-            {icon}
-          </ChannelsIconContainer>
-        )}
-      />
+      <ChannelsIconContainer isActive={isActive}>{icon}</ChannelsIconContainer>
       <Text as="div" color={isActive ? 'text' : 'neutral'}>
         {channelName}
       </Text>
