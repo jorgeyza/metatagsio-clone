@@ -34,16 +34,15 @@ export const uiSlice = createSlice({
   initialState,
   reducers: {
     toggleChannel: (state, action: PayloadAction<{ channelName: string }>) => {
+      // @ts-ignore
       state[action.payload.channelName] = !state[action.payload.channelName];
     },
     setInputValue: (
       state,
       action: PayloadAction<{ inputName: string; value: string }>
     ) => {
+      // @ts-ignore
       state[action.payload.inputName] = action.payload.value;
-    },
-    setImageUrl: (state, action: PayloadAction<{ imageUrl: string }>) => {
-      state.imageUrl = action.payload.imageUrl;
     },
     setImage: (state, action: PayloadAction<string>) => {
       state.imageFile = action.payload;
@@ -51,7 +50,6 @@ export const uiSlice = createSlice({
   },
 });
 
-export const { toggleChannel, setInputValue, setImageUrl, setImage } =
-  uiSlice.actions;
+export const { toggleChannel, setInputValue, setImage } = uiSlice.actions;
 
 export default uiSlice.reducer;

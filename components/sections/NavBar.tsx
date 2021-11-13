@@ -1,5 +1,6 @@
-import { chakra, Link, Input, Icon, Text } from '@chakra-ui/react';
 import { ChangeEvent } from 'react';
+import { chakra, Link, Input, Icon, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import { setInputValue } from '../../app/uiSlice';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -17,7 +18,11 @@ const NavBar = () => {
   };
 
   return (
-    <header>
+    <motion.header
+      initial={{ y: 25, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <chakra.nav
         display="flex"
         height={24}
@@ -26,7 +31,6 @@ const NavBar = () => {
         alignItems="center"
       >
         <Link
-          href="#"
           _hover={{
             textDecoration: 'none',
           }}
@@ -57,7 +61,7 @@ const NavBar = () => {
           Font Generator
         </Link>
       </chakra.nav>
-    </header>
+    </motion.header>
   );
 };
 

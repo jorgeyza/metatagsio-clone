@@ -6,7 +6,6 @@ import {
   ListItem,
   Text,
 } from '@chakra-ui/react';
-import { useState } from 'react';
 
 import GoogleIcon from '../../Icons/GoogleIcon';
 import FacebookIcon from '../../Icons/FacebookIcon';
@@ -15,6 +14,7 @@ import LinkedinIcon from '../../Icons/LinkedinIcon';
 import PinterestIcon from '../../Icons/PinterestIcon';
 import SlackIcon from '../../Icons/SlackIcon';
 import { ChannelsIconContainer } from '../../Icons/ChannelsIconContainer';
+
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { toggleChannel } from '../../app/uiSlice';
 
@@ -63,13 +63,6 @@ const ChannelsItems = ({
 };
 
 const Channels = () => {
-  const [isGoogleActive, setIsGoogleActive] = useState(true);
-  const [isFacebookActive, setIsFacebookActive] = useState(true);
-  const [isTwitterActive, setIsTwitterActive] = useState(true);
-  const [isLinkedinActive, setIsLinkedinActive] = useState(false);
-  const [isPinterestActive, setIsPinterestActive] = useState(false);
-  const [isSlasckActive, setIsSlasckActive] = useState(false);
-
   const dispatch = useAppDispatch();
   const googleChannel = useAppSelector((state) => state.ui.googleChannel);
   const facebookChannel = useAppSelector((state) => state.ui.facebookChannel);

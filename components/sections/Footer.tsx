@@ -1,10 +1,9 @@
 import { Flex, Box, Text, Center, Heading } from '@chakra-ui/react';
 import React from 'react';
+
 import LogoIcon from '../../Icons/LogoIcon';
 
-interface Props {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <Box as="footer" padding={6}>
       <Center

@@ -1,4 +1,13 @@
-import { Flex, Text, Link, Heading, HStack, Icon } from '@chakra-ui/react';
+import {
+  Flex,
+  FlexProps,
+  Text,
+  Link,
+  Heading,
+  HStack,
+  Icon,
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 import GenerateMetaTagsIcon from '../../Icons/GenerateMetaTagsIcon';
 import FacebookPreview from '../elements/FacebookPreview';
@@ -13,6 +22,8 @@ export interface PreviewProps {
   description: string;
 }
 
+const MotionFlex = motion<FlexProps>(Flex);
+
 const Preview = () => {
   const googleChannel = useAppSelector((state) => state.ui.googleChannel);
   const facebookChannel = useAppSelector((state) => state.ui.facebookChannel);
@@ -23,13 +34,17 @@ const Preview = () => {
   const description = useAppSelector((state) => state.ui.descriptionInput);
 
   return (
-    <Flex
+    <MotionFlex
       as="section"
       flexDir="column"
       gridGap={6}
       padding="12px 40px"
       paddingBottom="72px"
       flexGrow={1}
+      initial={{ x: -30, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      // @ts-ignore
+      transition={{ duration: 1, delay: 0.5 }}
     >
       <Flex width="100%" justifyContent="space-between" marginTop={4}>
         <Heading as="h1" size="xs" alignSelf="start">
@@ -73,7 +88,7 @@ const Preview = () => {
           description={description}
         />
       )}
-    </Flex>
+    </MotionFlex>
   );
 };
 
