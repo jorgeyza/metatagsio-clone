@@ -1,11 +1,4 @@
-import {
-  Heading,
-  VStack,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
-} from '@chakra-ui/react';
+import { Heading, VStack, List, ListItem, Text } from '@chakra-ui/react';
 
 import GoogleIcon from '../../Icons/GoogleIcon';
 import FacebookIcon from '../../Icons/FacebookIcon';
