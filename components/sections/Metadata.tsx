@@ -1,6 +1,6 @@
 import { Flex, VStack, Text, Textarea, Heading } from '@chakra-ui/react';
 import { ChangeEvent, useState } from 'react';
-import { setInputValue } from '../../app/uiSlice';
+import { setInputValue, setImage } from '../../app/uiSlice';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 import FileUpload from '../elements/FileUpload';
@@ -12,6 +12,7 @@ const Metadata = () => {
 
   const titleInput = useAppSelector((state) => state.ui.titleInput);
   const descriptionInput = useAppSelector((state) => state.ui.descriptionInput);
+  const imageFile = useAppSelector((state) => state.ui.imageFile);
 
   const handleTitleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(setInputValue({ inputName: 'titleInput', value: e.target.value }));
@@ -26,6 +27,11 @@ const Metadata = () => {
       })
     );
     setDescriptionLetterCount(e.target.value.length);
+  };
+
+  const handleImageChange = (file: File) => {
+    const localImageUrl = window.URL.createObjectURL(file);
+    dispatch(setImage(localImageUrl));
   };
 
   return (
@@ -51,7 +57,7 @@ const Metadata = () => {
             Recommend 1200×628
           </Text>
         </Flex>
-        <FileUpload />
+        <FileUpload onFileAccepted={handleImageChange} />
       </VStack>
       <VStack spacing={2} width="100%">
         <Flex justifyContent="space-between" width="100%">
@@ -63,6 +69,8 @@ const Metadata = () => {
           </Text>
         </Flex>
         <Textarea
+          variant="filled"
+          _focus={{ boxShadow: '0 1px 3px 0 #cfd7df' }}
           value={titleInput}
           resize="none"
           rows={2}
@@ -79,6 +87,8 @@ const Metadata = () => {
           </Text>
         </Flex>
         <Textarea
+          variant="filled"
+          _focus={{ boxShadow: '0 1px 3px 0 #cfd7df' }}
           value={descriptionInput}
           resize="none"
           rows={5}

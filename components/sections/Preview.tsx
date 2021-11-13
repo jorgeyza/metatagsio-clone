@@ -26,8 +26,9 @@ const Preview = () => {
     <Flex
       as="section"
       flexDir="column"
-      gridGap={4}
+      gridGap={6}
       padding="12px 40px"
+      paddingBottom="72px"
       flexGrow={1}
     >
       <Flex width="100%" justifyContent="space-between" marginTop={4}>

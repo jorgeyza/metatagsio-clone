@@ -1,4 +1,4 @@
-import { Flex, Text, Heading, Link } from '@chakra-ui/react';
+import { Flex, Text, Heading, Link, Image } from '@chakra-ui/react';
 
 import { PreviewProps } from '../sections/Preview';
 
@@ -9,7 +9,7 @@ const GooglePreview = ({ domain, title, description }: PreviewProps) => {
         <Heading
           as="h2"
           fontSize={'12px'}
-          fontWeight="400"
+          fontWeight="500"
           color="neutral"
           _before={{
             content: '""',
@@ -46,15 +46,23 @@ const GooglePreview = ({ domain, title, description }: PreviewProps) => {
         >
           {title}
         </Link>
-        <Text
-          fontSize="14px"
-          lineHeight={1.4}
-          color="google.link"
-          margin="0"
-          whiteSpace="nowrap"
-        >
-          {domain}
-        </Text>
+        <Flex alignItems="center" gridGap="3px">
+          <Text
+            fontSize="14px"
+            lineHeight={1.4}
+            color="google.link"
+            margin="0"
+            whiteSpace="nowrap"
+          >
+            {domain + '/'}
+          </Text>
+          <Image
+            alt="drop down icon"
+            src="./assets/drop-down-arrow.png"
+            width="8px"
+            height="8px"
+          />
+        </Flex>
         <Text
           color="google.description"
           fontSize="13px"

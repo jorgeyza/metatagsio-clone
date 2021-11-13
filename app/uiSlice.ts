@@ -10,6 +10,8 @@ export interface uiState {
   domainInput: string;
   titleInput: string;
   descriptionInput: string;
+  imageUrl: string;
+  imageFile: string;
 }
 
 const initialState: uiState = {
@@ -23,6 +25,8 @@ const initialState: uiState = {
   titleInput: 'Meta Tags — Preview, Edit and Generate',
   descriptionInput:
     'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!',
+  imageUrl: './assets/metatags-image.png',
+  imageFile: '',
 };
 
 export const uiSlice = createSlice({
@@ -38,9 +42,16 @@ export const uiSlice = createSlice({
     ) => {
       state[action.payload.inputName] = action.payload.value;
     },
+    setImageUrl: (state, action: PayloadAction<{ imageUrl: string }>) => {
+      state.imageUrl = action.payload.imageUrl;
+    },
+    setImage: (state, action: PayloadAction<string>) => {
+      state.imageFile = action.payload;
+    },
   },
 });
 
-export const { toggleChannel, setInputValue } = uiSlice.actions;
+export const { toggleChannel, setInputValue, setImageUrl, setImage } =
+  uiSlice.actions;
 
 export default uiSlice.reducer;

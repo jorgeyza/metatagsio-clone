@@ -41,6 +41,7 @@ const NavBar = () => {
         </Link>
         <Input
           width="33%"
+          fontWeight="700"
           size="lg"
           variant="filled"
           value={domainInput}

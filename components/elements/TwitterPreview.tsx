@@ -2,14 +2,20 @@ import { Box, Flex, Text, Heading } from '@chakra-ui/react';
 
 import { PreviewProps } from '../sections/Preview';
 
+import { removeProtocol } from '../../utils';
+import { useAppSelector } from '../../app/hooks';
+
 const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
+  const imageUrl = useAppSelector((state) => state.ui.imageUrl);
+  const imageFile = useAppSelector((state) => state.ui.imageFile);
+
   return (
     <>
       <Flex position="relative">
         <Heading
           as="h2"
           fontSize={'12px'}
-          fontWeight="400"
+          fontWeight="500"
           color="neutral"
           _before={{
             content: '""',
@@ -33,19 +39,28 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
       </Flex>
       <Flex
         flexDirection="column"
-        fontFamily="Helvetica, Arial, sans-serif"
+        fontFamily="system-ui, -apple-system, BlinkMacSystemFont, '.SFNSText-Regular', sans-serif"
         width="500px"
         cursor="pointer"
         border="1px solid"
         borderColor="twitter.border"
         borderRadius="0.42857em"
         overflow="hidden"
+        transition="all 0.25s ease-in-out"
+        _hover={{
+          backgroundColor: 'twitter.hoverBackground',
+          borderColor: 'twitter.hoverBorder',
+        }}
       >
         <Box
           position="relative"
           height="261px"
           borderBottom="1px solid"
           borderColor="twitter.border"
+          _hover={{
+            borderColor: 'twitter.hoverBorder',
+          }}
+          transition="all 0.25s ease-in-out"
           _before={{
             content: '""',
             display: 'block',
@@ -54,8 +69,9 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
             top: 0,
             width: '100%',
             height: '100%',
-            backgroundImage: 'url(./assets/metatags-image.png)',
+            backgroundImage: `url(${imageFile ? imageFile : imageUrl})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         />
         <Flex flexDirection="column" padding="10px 12px">
@@ -65,7 +81,7 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
             wordBreak="break-word"
             noOfLines={1}
             fontWeight="700"
-            fontSize="16px"
+            fontSize="14px"
           >
             {title}
           </Text>
@@ -84,8 +100,9 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
             color="twitter.domain"
             lineHeight={1.3125}
             textTransform="lowercase"
+            fontSize="14px"
           >
-            {domain}
+            {removeProtocol(domain)}
           </Text>
         </Flex>
       </Flex>

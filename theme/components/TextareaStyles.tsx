@@ -3,6 +3,7 @@ export const TextareaStyles = {
     filled: {
       field: {
         backgroundColor: 'secondary',
+        focusBorderColor: 'none',
         _hover: {
           backgroundColor: 'secondary',
         },

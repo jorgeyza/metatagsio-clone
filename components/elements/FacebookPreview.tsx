@@ -2,14 +2,20 @@ import { Box, Flex, Text, Heading } from '@chakra-ui/react';
 
 import { PreviewProps } from '../sections/Preview';
 
+import { removeProtocol } from '../../utils';
+import { useAppSelector } from '../../app/hooks';
+
 const FacebookPreview = ({ domain, title, description }: PreviewProps) => {
+  const imageUrl = useAppSelector((state) => state.ui.imageUrl);
+  const imageFile = useAppSelector((state) => state.ui.imageFile);
+
   return (
     <>
       <Flex position="relative">
         <Heading
           as="h2"
           fontSize={'12px'}
-          fontWeight="400"
+          fontWeight="500"
           color="neutral"
           _before={{
             content: '""',
@@ -52,8 +58,9 @@ const FacebookPreview = ({ domain, title, description }: PreviewProps) => {
             top: 0,
             width: '100%',
             height: '100%',
-            backgroundImage: 'url(./assets/metatags-image.png)',
+            backgroundImage: `url(${imageFile ? imageFile : imageUrl})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
         ></Box>
         <Flex
@@ -69,28 +76,34 @@ const FacebookPreview = ({ domain, title, description }: PreviewProps) => {
             whiteSpace="nowrap"
             wordBreak="break-word"
           >
-            {domain}
+            {removeProtocol(domain)}
           </Text>
-          <Text
-            noOfLines={2}
-            color="facebook.title"
-            whiteSpace="normal"
-            wordBreak="break-word"
-            fontWeight="700"
-            fontSize="16px"
-          >
-            {title}
-          </Text>
-          <Text
-            noOfLines={1}
-            color="facebook.description"
-            fontSize="14px"
-            textOverflow="ellipsis"
-            height="18px"
-            overflow="hidden"
-          >
-            {description}
-          </Text>
+          <Box height="46px" overflow="hidden">
+            <Text
+              color="facebook.title"
+              whiteSpace="normal"
+              wordBreak="break-word"
+              fontWeight="700"
+              fontSize="16px"
+              lineHeight="20px"
+              overflow="hidden"
+              marginTop="3px"
+            >
+              {title}
+            </Text>
+            <Text
+              noOfLines={1}
+              color="facebook.description"
+              fontSize="14px"
+              textOverflow="ellipsis"
+              height="18px"
+              overflow="hidden"
+              lineHeight="20px"
+              marginTop="3px"
+            >
+              {description}
+            </Text>
+          </Box>
         </Flex>
       </Flex>
     </>

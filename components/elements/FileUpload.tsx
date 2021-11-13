@@ -4,11 +4,16 @@ import { Center, Icon, Text, Flex } from '@chakra-ui/react';
 
 import ArrowUpIcon from '../../Icons/ArrowUpIcon';
 
+import { useAppSelector } from '../../app/hooks';
+
 interface DropzoneProps {
   onFileAccepted: (file: File) => void;
 }
 
-export default function Dropzone({ onFileAccepted }: DropzoneProps) {
+const Dropzone = ({ onFileAccepted }: DropzoneProps) => {
+  const imageUrl = useAppSelector((state) => state.ui.imageUrl);
+  const imageFile = useAppSelector((state) => state.ui.imageFile);
+
   const onDrop = useCallback(
     (acceptedFiles) => {
       onFileAccepted(acceptedFiles[0]);
@@ -43,8 +48,9 @@ export default function Dropzone({ onFileAccepted }: DropzoneProps) {
         width: '100%',
         height: '100%',
         opacity: 0.6,
-        backgroundImage: 'url(./assets/metatags-image.png)',
+        backgroundImage: `url(${imageFile ? imageFile : imageUrl})`,
         backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
       transition="all 0.25s ease-out"
       {...getRootProps()}
@@ -58,9 +64,11 @@ export default function Dropzone({ onFileAccepted }: DropzoneProps) {
       >
         <Icon as={ArrowUpIcon} />
         <Text color="text" fontWeight="700" fontSize="11px">
-          {'DRAG & DROP OR CLICK'}
+          {'CLICK'}
         </Text>
       </Flex>
     </Center>
   );
-}
+};
+
+export default Dropzone;

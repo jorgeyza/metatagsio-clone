@@ -4,9 +4,7 @@ import ChannelsAndDebuggers from './ChannelsAndDebuggers';
 import Metadata from './Metadata';
 import Preview from './Preview';
 
-interface Props {}
-
-const MainSection = (props: Props) => {
+const MainSection = () => {
   return (
     <Flex as="main" borderY="1px solid" borderColor="icon.default">
       <ChannelsAndDebuggers />

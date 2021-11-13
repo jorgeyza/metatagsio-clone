@@ -36,7 +36,9 @@ export const theme = extendTheme({
       title: '#18283E',
       description: '#18283E',
       mainBackground: '#E1E8ED',
+      hoverBackground: '#F5F8FA',
       border: '#E1E8ED',
+      hoverBorder: 'rgba(136,153,166,0.5)',
     },
   },
   fonts: {
