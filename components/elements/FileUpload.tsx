@@ -15,7 +15,7 @@ const Dropzone = ({ onFileAccepted }: DropzoneProps) => {
   const imageFile = useAppSelector((state) => state.ui.imageFile);
 
   const onDrop = useCallback(
-    (acceptedFiles) => {
+    (acceptedFiles: File[]) => {
       onFileAccepted(acceptedFiles[0]);
     },
     [onFileAccepted]
