@@ -1,15 +1,15 @@
-import { Heading, VStack, List, ListItem, Text } from '@chakra-ui/react';
+import { Heading, VStack, List, ListItem, Text } from "@chakra-ui/react";
 
-import GoogleIcon from '../../Icons/GoogleIcon';
-import FacebookIcon from '../../Icons/FacebookIcon';
-import TwitterIcon from '../../Icons/TwitterIcon';
-import LinkedinIcon from '../../Icons/LinkedinIcon';
-import PinterestIcon from '../../Icons/PinterestIcon';
-import SlackIcon from '../../Icons/SlackIcon';
-import { ChannelsIconContainer } from '../../Icons/ChannelsIconContainer';
+import GoogleIcon from "../../Icons/GoogleIcon";
+import FacebookIcon from "../../Icons/FacebookIcon";
+import TwitterIcon from "../../Icons/TwitterIcon";
+import LinkedinIcon from "../../Icons/LinkedinIcon";
+import PinterestIcon from "../../Icons/PinterestIcon";
+import SlackIcon from "../../Icons/SlackIcon";
+import { ChannelsIconContainer } from "../../Icons/ChannelsIconContainer";
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { toggleChannel } from '../../app/uiSlice';
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { toggleChannel } from "../../app/uiSlice";
 
 interface ChannelsItemsProps {
   channelName: string;
@@ -34,13 +34,13 @@ const ChannelsItems = ({
       paddingX={2}
       gridGap={4}
       _hover={{
-        borderLeft: '3px solid',
-        borderColor: 'primary',
+        borderLeft: "3px solid",
+        borderColor: "primary",
       }}
       onClick={handleActiveChannel}
     >
       <ChannelsIconContainer isActive={isActive}>{icon}</ChannelsIconContainer>
-      <Text as="div" color={isActive ? 'text' : 'neutral'}>
+      <Text as="div" color={isActive ? "text" : "neutral"}>
         {channelName}
       </Text>
     </ListItem>
@@ -58,46 +58,40 @@ const Channels = () => {
 
   const listItems = [
     {
-      channelName: 'Google',
+      channelName: "Google",
       icon: <GoogleIcon />,
       isActive: googleChannel,
-      handleActiveChannel: () =>
-        dispatch(toggleChannel({ channelName: 'googleChannel' })),
+      handleActiveChannel: () => dispatch(toggleChannel({ channelName: "googleChannel" })),
     },
     {
-      channelName: 'Facebook',
+      channelName: "Facebook",
       icon: <FacebookIcon />,
       isActive: facebookChannel,
-      handleActiveChannel: () =>
-        dispatch(toggleChannel({ channelName: 'facebookChannel' })),
+      handleActiveChannel: () => dispatch(toggleChannel({ channelName: "facebookChannel" })),
     },
     {
-      channelName: 'Twitter',
+      channelName: "Twitter",
       icon: <TwitterIcon />,
       isActive: twitterChannel,
-      handleActiveChannel: () =>
-        dispatch(toggleChannel({ channelName: 'twitterChannel' })),
+      handleActiveChannel: () => dispatch(toggleChannel({ channelName: "twitterChannel" })),
     },
     {
-      channelName: 'Linkedin',
+      channelName: "Linkedin",
       icon: <LinkedinIcon />,
       isActive: linkedinChannel,
-      handleActiveChannel: () =>
-        dispatch(toggleChannel({ channelName: 'linkedinChannel' })),
+      handleActiveChannel: () => dispatch(toggleChannel({ channelName: "linkedinChannel" })),
     },
     {
-      channelName: 'Pinterest',
+      channelName: "Pinterest",
       icon: <PinterestIcon />,
       isActive: pinterestChannel,
-      handleActiveChannel: () =>
-        dispatch(toggleChannel({ channelName: 'pinterestChannel' })),
+      handleActiveChannel: () => dispatch(toggleChannel({ channelName: "pinterestChannel" })),
     },
     {
-      channelName: 'Slack',
+      channelName: "Slack",
       icon: <SlackIcon />,
       isActive: slackChannel,
-      handleActiveChannel: () =>
-        dispatch(toggleChannel({ channelName: 'slackChannel' })),
+      handleActiveChannel: () => dispatch(toggleChannel({ channelName: "slackChannel" })),
     },
   ];
 

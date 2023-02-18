@@ -1,14 +1,14 @@
-import type { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
-import { Provider } from 'react-redux';
+import type { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Provider } from "react-redux";
 
-import { store } from '../app/store';
+import { store } from "../app/store";
 
-import { theme } from '../theme';
+import { theme } from "../theme";
 
-import '@fontsource/open-sans/400.css';
-import '@fontsource/open-sans/500.css';
-import '@fontsource/open-sans/700.css';
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/500.css";
+import "@fontsource/open-sans/700.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

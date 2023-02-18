@@ -1,8 +1,9 @@
-import { Box, BoxProps } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Box, BoxProps } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 interface Props {
   isActive: boolean;
+  children: React.ReactNode;
 }
 
 const MotionBox = motion<BoxProps>(Box);
@@ -14,10 +15,7 @@ const circleAnimation = {
   },
 };
 
-export const ChannelsIconContainer: React.FC<Props> = ({
-  isActive,
-  children,
-}) => {
+export const ChannelsIconContainer: React.FC<Props> = ({ isActive, children }) => {
   return (
     <>
       <MotionBox
@@ -30,12 +28,12 @@ export const ChannelsIconContainer: React.FC<Props> = ({
         backgroundColor="primary"
         variants={circleAnimation}
         initial="inactive"
-        animate={isActive ? 'active' : 'inactive'}
+        animate={isActive ? "active" : "inactive"}
       />
       <MotionBox
         as="span"
         display="flex"
-        color={isActive ? 'icon.active' : 'icon.default'}
+        color={isActive ? "icon.active" : "icon.default"}
         position="relative"
         alignItems="center"
         justifyContent="center"

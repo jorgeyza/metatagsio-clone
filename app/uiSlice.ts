@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface uiState {
   googleChannel: boolean;
@@ -21,26 +21,23 @@ const initialState: uiState = {
   linkedinChannel: false,
   pinterestChannel: false,
   slackChannel: false,
-  domainInput: 'https://metatags.io',
-  titleInput: 'Meta Tags — Preview, Edit and Generate',
+  domainInput: "https://metatags.io",
+  titleInput: "Meta Tags — Preview, Edit and Generate",
   descriptionInput:
-    'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!',
-  imageUrl: './assets/metatags-image.png',
-  imageFile: '',
+    "With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!",
+  imageUrl: "./assets/metatags-image.png",
+  imageFile: "",
 };
 
 export const uiSlice = createSlice({
-  name: 'ui',
+  name: "ui",
   initialState,
   reducers: {
     toggleChannel: (state, action: PayloadAction<{ channelName: string }>) => {
       // @ts-ignore
       state[action.payload.channelName] = !state[action.payload.channelName];
     },
-    setInputValue: (
-      state,
-      action: PayloadAction<{ inputName: string; value: string }>
-    ) => {
+    setInputValue: (state, action: PayloadAction<{ inputName: string; value: string }>) => {
       // @ts-ignore
       state[action.payload.inputName] = action.payload.value;
     },

@@ -1,8 +1,8 @@
-import { Flex, FlexProps } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Flex, FlexProps } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
-import Channels from '../elements/Channels';
-import OfficialDebuggers from '../elements/OfficialDebuggers';
+import Channels from "../elements/Channels";
+import OfficialDebuggers from "../elements/OfficialDebuggers";
 
 const MotionFlex = motion<FlexProps>(Flex);
 

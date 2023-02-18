@@ -1,9 +1,9 @@
-import { Box, Flex, Text, Heading } from '@chakra-ui/react';
+import { Box, Flex, Text, Heading } from "@chakra-ui/react";
 
-import { PreviewProps } from '../sections/Preview';
+import { PreviewProps } from "../sections/Preview";
 
-import { removeProtocol } from '../../utils';
-import { useAppSelector } from '../../app/hooks';
+import { removeProtocol } from "../../utils";
+import { useAppSelector } from "../../app/hooks";
 
 const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
   const imageUrl = useAppSelector((state) => state.ui.imageUrl);
@@ -14,25 +14,20 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
       <Flex position="relative">
         <Heading
           as="h2"
-          fontSize={'12px'}
+          fontSize={"12px"}
           fontWeight="500"
           color="neutral"
           _before={{
             content: '""',
-            position: 'absolute',
-            top: '9px',
+            position: "absolute",
+            top: "9px",
             right: 0,
-            width: '100%',
-            height: '1px',
-            backgroundColor: 'previewDivider',
+            width: "100%",
+            height: "1px",
+            backgroundColor: "previewDivider",
           }}
         >
-          <Text
-            as="span"
-            background="white"
-            position="relative"
-            paddingRight={4}
-          >
+          <Text as="span" background="white" position="relative" paddingRight={4}>
             Twitter
           </Text>
         </Heading>
@@ -48,8 +43,8 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
         overflow="hidden"
         transition="all 0.25s ease-in-out"
         _hover={{
-          backgroundColor: 'twitter.hoverBackground',
-          borderColor: 'twitter.hoverBorder',
+          backgroundColor: "twitter.hoverBackground",
+          borderColor: "twitter.hoverBorder",
         }}
       >
         <Box
@@ -58,20 +53,20 @@ const TwitterPreview = ({ domain, title, description }: PreviewProps) => {
           borderBottom="1px solid"
           borderColor="twitter.border"
           _hover={{
-            borderColor: 'twitter.hoverBorder',
+            borderColor: "twitter.hoverBorder",
           }}
           transition="all 0.25s ease-in-out"
           _before={{
             content: '""',
-            display: 'block',
-            position: 'absolute',
+            display: "block",
+            position: "absolute",
             left: 0,
             top: 0,
-            width: '100%',
-            height: '100%',
+            width: "100%",
+            height: "100%",
             backgroundImage: `url(${imageFile ? imageFile : imageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
         <Flex flexDirection="column" padding="10px 12px">

@@ -2,13 +2,13 @@ export const TextareaStyles = {
   variants: {
     filled: {
       field: {
-        backgroundColor: 'secondary',
-        focusBorderColor: 'none',
+        backgroundColor: "secondary",
+        focusBorderColor: "none",
         _hover: {
-          backgroundColor: 'secondary',
+          backgroundColor: "secondary",
         },
         _focus: {
-          backgroundColor: 'secondary',
+          backgroundColor: "secondary",
         },
       },
     },

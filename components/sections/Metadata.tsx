@@ -1,18 +1,11 @@
-import { ChangeEvent, useState } from 'react';
-import {
-  Flex,
-  FlexProps,
-  VStack,
-  Text,
-  Textarea,
-  Heading,
-} from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { ChangeEvent, useState } from "react";
+import { Flex, FlexProps, VStack, Text, Textarea, Heading } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
-import { setInputValue, setImage } from '../../app/uiSlice';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { setInputValue, setImage } from "../../app/uiSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
-import FileUpload from '../elements/FileUpload';
+import FileUpload from "../elements/FileUpload";
 
 const MotionFlex = motion<FlexProps>(Flex);
 
@@ -25,14 +18,14 @@ const Metadata = () => {
   const descriptionInput = useAppSelector((state) => state.ui.descriptionInput);
 
   const handleTitleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    dispatch(setInputValue({ inputName: 'titleInput', value: e.target.value }));
+    dispatch(setInputValue({ inputName: "titleInput", value: e.target.value }));
     setTitleLetterCount(e.target.value.length);
   };
 
   const handleDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(
       setInputValue({
-        inputName: 'descriptionInput',
+        inputName: "descriptionInput",
         value: e.target.value,
       })
     );
@@ -84,7 +77,7 @@ const Metadata = () => {
         </Flex>
         <Textarea
           variant="filled"
-          _focus={{ boxShadow: '0 1px 3px 0 #cfd7df' }}
+          _focus={{ boxShadow: "0 1px 3px 0 #cfd7df" }}
           value={titleInput}
           resize="none"
           rows={2}
@@ -102,7 +95,7 @@ const Metadata = () => {
         </Flex>
         <Textarea
           variant="filled"
-          _focus={{ boxShadow: '0 1px 3px 0 #cfd7df' }}
+          _focus={{ boxShadow: "0 1px 3px 0 #cfd7df" }}
           value={descriptionInput}
           resize="none"
           rows={5}

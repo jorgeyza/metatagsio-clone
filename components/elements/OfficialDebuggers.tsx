@@ -1,4 +1,4 @@
-import { Heading, VStack, List, ListItem, Link } from '@chakra-ui/react';
+import { Heading, VStack, List, ListItem, Link } from "@chakra-ui/react";
 
 const OfficialDebuggers = () => {
   return (
@@ -6,13 +6,7 @@ const OfficialDebuggers = () => {
       <Heading as="h1" size="xs" fontSize="11px">
         OFFICIAL DEBUGGERS
       </Heading>
-      <List
-        display="flex"
-        flexDirection="column"
-        spacing={2}
-        fontSize="18px"
-        alignSelf="start"
-      >
+      <List display="flex" flexDirection="column" spacing={2} fontSize="18px" alignSelf="start">
         <ListItem cursor="pointer" alignItems="start">
           <Link color="text">Facebook</Link>
         </ListItem>

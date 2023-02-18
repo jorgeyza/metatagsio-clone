@@ -1,5 +1,5 @@
-import { Box, BoxProps } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Box, BoxProps } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const MotionBox = motion<BoxProps>(Box);
 
@@ -24,12 +24,7 @@ const ArrowUpIcon = () => {
         height="56px"
         whileHover={{ scale: 1.1 }}
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="24"
-          viewBox="0 0 22 24"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="24" viewBox="0 0 22 24">
           <g
             fill="none"
             fillRule="evenodd"

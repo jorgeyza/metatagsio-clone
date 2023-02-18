@@ -1,8 +1,8 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex } from "@chakra-ui/react";
 
-import ChannelsAndDebuggers from './ChannelsAndDebuggers';
-import Metadata from './Metadata';
-import Preview from './Preview';
+import ChannelsAndDebuggers from "./ChannelsAndDebuggers";
+import Metadata from "./Metadata";
+import Preview from "./Preview";
 
 const MainSection = () => {
   return (

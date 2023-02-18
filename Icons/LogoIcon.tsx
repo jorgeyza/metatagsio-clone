@@ -1,11 +1,6 @@
 const LogoIcon = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
-      viewBox="0 0 40 40"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
       <g fill="none" fillRule="evenodd">
         <rect width="40" height="40" fill="#2A81FB" rx="8"></rect>
         <circle cx="29" cy="27" r="5" fill="#FFF"></circle>

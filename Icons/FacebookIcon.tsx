@@ -1,11 +1,6 @@
 const FacebookIcon = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="13"
-      height="24"
-      viewBox="0 0 13 24"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="24" viewBox="0 0 13 24">
       <path
         fill="currentColor"
         fillRule="evenodd"

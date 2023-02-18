@@ -1,20 +1,12 @@
-import {
-  Flex,
-  FlexProps,
-  Text,
-  Link,
-  Heading,
-  HStack,
-  Icon,
-} from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { Flex, FlexProps, Text, Link, Heading, HStack, Icon } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
-import GenerateMetaTagsIcon from '../../Icons/GenerateMetaTagsIcon';
-import FacebookPreview from '../elements/FacebookPreview';
-import GooglePreview from '../elements/GooglePreview';
-import TwitterPreview from '../elements/TwitterPreview';
+import GenerateMetaTagsIcon from "../../Icons/GenerateMetaTagsIcon";
+import FacebookPreview from "../elements/FacebookPreview";
+import GooglePreview from "../elements/GooglePreview";
+import TwitterPreview from "../elements/TwitterPreview";
 
-import { useAppSelector } from '../../app/hooks';
+import { useAppSelector } from "../../app/hooks";
 
 export interface PreviewProps {
   title: string;
@@ -54,7 +46,7 @@ const Preview = () => {
           position="relative"
           top="-11px"
           color="primary"
-          border={'1px solid'}
+          border={"1px solid"}
           borderColor="icon.default"
           borderRadius="4px"
           padding={2}
@@ -67,27 +59,11 @@ const Preview = () => {
           </HStack>
         </Link>
       </Flex>
-      {googleChannel && (
-        <GooglePreview
-          domain={domain}
-          title={title}
-          description={description}
-        />
-      )}
+      {googleChannel && <GooglePreview domain={domain} title={title} description={description} />}
       {facebookChannel && (
-        <FacebookPreview
-          domain={domain}
-          title={title}
-          description={description}
-        />
+        <FacebookPreview domain={domain} title={title} description={description} />
       )}
-      {twitterChannel && (
-        <TwitterPreview
-          domain={domain}
-          title={title}
-          description={description}
-        />
-      )}
+      {twitterChannel && <TwitterPreview domain={domain} title={title} description={description} />}
     </MotionFlex>
   );
 };
